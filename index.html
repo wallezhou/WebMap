@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>OSM地图</title>
 
     <link href="./css/ol.css" rel="stylesheet" type="text/css">
     <link href="./css/base.css" rel="stylesheet" type="text/css">
@@ -27,7 +27,13 @@
                 center : [0,0],
                 zoom : 2
             })
-        })
+        });
+        var zoomslider = new ol.control.ZoomSlider();
+        map.addControl(zoomslider);
+        var zoomToExtent = new ol.control.ZoomToExtent({
+            extent : [13100000, 4290000, 13200000,5210000]
+        });
+        map.addControl(zoomToExtent);
     </script>
 </body>
 </html>
